@@ -4,19 +4,12 @@ import java.math.*;
 public class diskri {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        BigInteger a = in.nextBigInteger();
-        BigInteger b = in.nextBigInteger();
-        BigInteger c = in.nextBigInteger();
-        BigInteger d = b.multiply(b).subtract(new BigInteger("4").multiply(a).multiply(c));
-        if(d.equals(BigInteger.ZERO)) System.out.println(b.negate().divide(new BigInteger("2")).multiply(a));
-        else if(d.compareTo(BigInteger.ZERO) > 0) System.out.println(b.negate().add(sqrt(d)).divide(a.multiply(new BigInteger("2"))) + "\n" + b.negate().subtract(sqrt(d)).divide(a.multiply(new BigInteger("2"))));
-        else System.out.println("Javob yo'q");
+        long a = in.nextLong(in.radix());
+        long b = in.nextLong();
+        long c = in.nextLong();
+        long d = b * b - 4 * a * c;
+        if(d < 0) System.out.println("Javob yo'q");
+        else if(d == 0) System.out.println(-b / 2 * a);
+        else System.out.println((-b + d) / 2 * a + " " + (-b - d) / 2 * a);
     }
-    public static BigInteger sqrt(BigInteger a){
-        BigInteger x = a;
-        BigInteger y = a.shiftRight(1).add(BigInteger.ONE);
-        while(y.compareTo(x) < 0) {x = y;y = (a.divide(x).add(x).shiftRight(1));}
-        return x;
-    }
-
 }
