@@ -4,7 +4,7 @@ import java.math.*;
 public class diskri {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        long a = in.nextLong(in.radix());
+        long a = in.nextLong();
         long b = in.nextLong();
         long c = in.nextLong();
         long d = b * b - 4 * a * c;
