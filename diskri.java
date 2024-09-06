@@ -8,7 +8,7 @@ public class diskri {
         BigInteger b = in.nextBigInteger();
         BigInteger c = in.nextBigInteger();
         BigInteger d = b.multiply(b).subtract(new BigInteger("4").multiply(a).multiply(c));
-        if(d.equals(BigInteger.ZERO)) System.out.println(b.negate().divide(new BigInteger("2")));
+        if(d.equals(BigInteger.ZERO)) System.out.println(b.negate().divide(new BigInteger("2")).multiply(a));
         else if(d.compareTo(BigInteger.ZERO) > 0) System.out.println(b.negate().add(sqrt(d)).divide(a.multiply(new BigInteger("2"))) + "\n" + b.negate().subtract(sqrt(d)).divide(a.multiply(new BigInteger("2"))));
         else System.out.println("Javob yo'q");
     }
